@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Medha Hospital | Patient Support</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <style>
+    body {
+      font-family: Inter, system-ui, sans-serif;
+      background-color: #c8dcf8;
+    }
+
+    .navbar {
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .hero {
+      min-height: 65vh;
+      background: linear-gradient(180deg, rgba(170, 202, 250, 0.9), rgba(153, 136, 201, 0.9)),
+      url('https://images.unsplash.com/photo-1576765608535-5f04d1e3f289') center/cover;
+    }
+
+    .card-soft {
+      border-radius: 1.2rem;
+      box-shadow: 0 1rem 2rem rgba(0,0,0,0.06);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      transition: 0.3s;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ✅ Navbar -->
+<header class="sticky-top">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-primary" href="/"><img src="https://images.icon-icons.com/3031/PNG/96/medical_heh_care_doctor_hospital_icon_188998.png" alt="Medha Hospital Logo" class="me-2" style="height: 40px; width: auto;">Medha Hospital</a>
+
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="/#specialities">Specialities</a></li>
+          <li class="nav-item"><a class="nav-link" href="/#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li>
+        </ul>
+
+        <div>
+          <a class="btn btn-outline-primary me-2" href="/contact/#login">Login</a>
+          <a class="btn btn-primary" href="/contact/#signup">Signup</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- ✅ Hero -->
+<section class="hero d-flex align-items-center">
+  <div class="container">
+    <h1 class="fw-bold">Patient Support Services</h1>
+    <p class="text-muted">
+      Dedicated support for patients and families throughout their healthcare journey.
+    </p>
+    <a href="#support" class="btn btn-primary">Explore Support</a>
+  </div>
+</section>
+
+<!-- ✅ Support Section -->
+<section id="support" class="container py-5">
+  <div class="row g-4">
+
+    <div class="col-md-4">
+      <div class="card card-soft p-4 text-center feature-card">
+        <h5>Appointment Help</h5>
+        <p class="text-muted">Easy scheduling and reminders for visits.</p>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card card-soft p-4 text-center feature-card">
+        <h5>Insurance Support</h5>
+        <p class="text-muted">Guidance for billing and insurance queries.</p>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card card-soft p-4 text-center feature-card">
+        <h5>24/7 Assistance</h5>
+        <p class="text-muted">Always available for urgent patient needs.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ✅ Info Section -->
+<section class="bg-light py-5">
+  <div class="container">
+    <div class="row g-4">
+
+      <div class="col-md-6">
+        <div class="card card-soft p-4">
+          <h4>How We Help</h4>
+          <ul class="text-muted">
+            <li>✔ Dedicated patient coordinators</li>
+            <li>✔ Real-time updates</li>
+            <li>✔ Family communication support</li>
+            <li>✔ Discharge assistance</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card card-soft p-4">
+          <h4>Support Contact</h4>
+          <p class="text-muted">Reach our support team anytime.</p>
+          <p>📞 +91 9876543210</p>
+          <p>📧 support@medha.com</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ✅ CTA -->
+<section class="bg-primary text-white py-5">
+  <div class="container text-center">
+    <h3>Need help right now?</h3>
+    <p>Our team is ready to assist you anytime.</p>
+    <a href="/contact/" class="btn btn-light text-primary">Contact Support</a>
+  </div>
+</section>
+
+<!-- ✅ Footer -->
+<footer class="bg-white text-center py-4">
+  <small>© 2026 Medha Hospital</small>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
