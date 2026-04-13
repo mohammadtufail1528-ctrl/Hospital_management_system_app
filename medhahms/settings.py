@@ -92,7 +92,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'medhahms.wsgi.application'
+
 
 
 # Database
