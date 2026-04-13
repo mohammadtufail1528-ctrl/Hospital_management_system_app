@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Doctor</title>
 
     <!-- Bootstrap -->
@@ -15,48 +16,74 @@
             font-family: 'Poppins', sans-serif;
             background: linear-gradient(135deg, #eef2ff, #f8f9ff);
             min-height: 100vh;
-            padding: 40px 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
         }
 
         .container-box {
             background: #fff;
             padding: 30px;
             border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 550px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .container-box:hover {
+            transform: translateY(-3px);
         }
 
         h2 {
             font-weight: 600;
             margin-bottom: 20px;
+            text-align: center;
+            font-size: 24px;
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 18px;
+        }
+
+        label {
+            font-weight: 500;
+            margin-bottom: 5px;
+            display: block;
         }
 
         .form-control {
-            border-radius: 8px;
-            padding: 12px 15px;
-            border: 1px solid #ccc;
-            outline: none;
-            transition: 0.3s;
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 14px;
+            transition: 0.25s;
         }
 
         .form-control:focus {
             border-color: #667eea;
-            box-shadow: 0 0 5px rgba(102,126,234,0.5);
+            box-shadow: 0 0 6px rgba(102,126,234,0.4);
+        }
+
+        /* Buttons */
+        .btn-group-custom {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
         }
 
         .btn-custom {
-            border-radius: 8px;
-            padding: 12px 25px;
-            font-size: 16px;
+            flex: 1;
+            border-radius: 10px;
+            padding: 12px;
+            font-size: 14px;
             transition: 0.3s;
         }
 
         .btn-save {
             background: #4CAF50;
             color: white;
+            border: none;
         }
 
         .btn-save:hover {
@@ -66,45 +93,73 @@
         .btn-cancel {
             background: #8a8d9b;
             color: white;
+            text-align: center;
         }
 
         .btn-cancel:hover {
             background: #5a67d8;
+            color: #fff;
+        }
+
+        /* Mobile Optimization */
+        @media (max-width: 576px) {
+            .container-box {
+                padding: 20px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            .btn-group-custom {
+                flex-direction: column;
+            }
+        }
+
+        /* Tablet */
+        @media (min-width: 577px) and (max-width: 991px) {
+            .container-box {
+                max-width: 480px;
+            }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="container-box">
+<div class="container-box">
 
-        <h2>Edit Doctor</h2>
+    <h2>Edit Doctor</h2>
 
-        <form method="post">
-            {% csrf_token %}
-            
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" class="form-control" id="name" name="name" value="{{ doctor.name }}" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="phone">Phone</label>
-                <input type="text" class="form-control" id="phone" name="phone" value="{{ doctor.phone }}" required>
-            </div>
-            <div class="form-group">
-                <label for="specilization">Specilization</label>
-                <input type="text" class="form-control" id="specilization" name="specilization" value="{{ doctor.specilization }}" required>
-            </div>
-            <div class="form-group">
-                <label for="age">Age</label>
-                <input type="number" class="form-control" id="age" name="age" value="{{ doctor.age }}" required>    
-            </div>
+    <form method="post">
+        {% csrf_token %}
+        
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" value="{{ doctor.name }}" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="text" class="form-control" id="phone" name="phone" value="{{ doctor.phone }}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="specilization">Specilization</label>
+            <input type="text" class="form-control" id="specilization" name="specilization" value="{{ doctor.specilization }}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" class="form-control" id="age" name="age" value="{{ doctor.age }}" required>    
+        </div>
+
+        <div class="btn-group-custom">
             <button type="submit" class="btn btn-custom btn-save">Save</button>
             <a href="/doctor/" class="btn btn-custom btn-cancel">Cancel</a>
-        </form>
+        </div>
 
-    </div>
+    </form>
+
 </div>
 
 </body>

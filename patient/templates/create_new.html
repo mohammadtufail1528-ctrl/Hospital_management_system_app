@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patient Form</title>
 
     <!-- Bootstrap -->
@@ -18,45 +19,66 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 15px;
         }
 
         .form-card {
             background: #fff;
-            padding: 35px;
+            padding: 30px;
             border-radius: 16px;
             width: 100%;
             max-width: 600px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
             transition: 0.3s;
         }
 
         .form-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-3px);
         }
 
         h2 {
             text-align: center;
             font-weight: 600;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .form-label {
+            font-weight: 500;
+            margin-bottom: 5px;
         }
 
         .form-control {
             border-radius: 10px;
-            transition: 0.3s;
+            padding: 10px;
+            font-size: 14px;
+            transition: 0.25s;
         }
 
         .form-control:focus {
             border-color: #667eea;
-            box-shadow: 0 0 5px rgba(102,126,234,0.5);
+            box-shadow: 0 0 6px rgba(102,126,234,0.4);
         }
 
+        /* Radio buttons */
+        .form-check {
+            margin-right: 15px;
+        }
+
+        .form-check-input:checked {
+            background-color: #667eea;
+            border-color: #667eea;
+        }
+
+        /* Buttons */
         .btn-primary {
             width: 100%;
             border-radius: 10px;
-            padding: 10px;
+            padding: 12px;
             font-weight: 500;
             background: #667eea;
             border: none;
+            transition: 0.3s;
         }
 
         .btn-primary:hover {
@@ -72,6 +94,8 @@
             color: white;
             padding: 8px 12px;
             border-radius: 8px;
+            transition: 0.3s;
+            font-size: 14px;
         }
 
         .back-btn:hover {
@@ -79,9 +103,37 @@
             color: white;
         }
 
-        .form-check-input:checked {
-            background-color: #667eea;
-            border-color: #667eea;
+        /* Mobile Optimization */
+        @media (max-width: 576px) {
+            .form-card {
+                padding: 20px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            .btn-primary {
+                padding: 10px;
+                font-size: 14px;
+            }
+
+            .back-btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .form-check-inline {
+                display: block;
+                margin-bottom: 8px;
+            }
+        }
+
+        /* Tablet */
+        @media (min-width: 577px) and (max-width: 991px) {
+            .form-card {
+                max-width: 500px;
+            }
         }
     </style>
 </head>
@@ -90,7 +142,7 @@
 <div class="form-card">
 
     <!-- Back Button -->
-    <a href="/patient/create/" class="back-btn">⬅ Back</a>
+    <a href="/patient/" class="back-btn">⬅ Back</a>
 
     <h2>Patient Form</h2>
 

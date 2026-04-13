@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doctor List</title>
 
     <!-- Bootstrap -->
@@ -15,29 +16,62 @@
             font-family: 'Poppins', sans-serif;
             background: linear-gradient(135deg, #eef2ff, #f8f9ff);
             min-height: 100vh;
-            padding: 40px 15px;
+            padding: 20px 10px;
         }
 
         .container-box {
             background: #fff;
-            padding: 30px;
+            padding: 25px;
             border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
         }
 
         h2 {
             font-weight: 600;
             margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Top section */
+        .top-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .back-btn {
+            background: #8a8d9b;
+            color: white;
+            padding: 10px 14px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: 0.3s;
+            font-size: 14px;
+        }
+
+        .back-btn:hover {
+            background: #5a67d8;
+            color: #fff;
+        }
+
+        /* Table */
+        .table-responsive {
+            overflow-x: auto;
         }
 
         table {
             border-radius: 10px;
             overflow: hidden;
+            min-width: 600px;
         }
 
         th {
             background: #667eea;
             color: white;
+            white-space: nowrap;
         }
 
         td, th {
@@ -50,11 +84,11 @@
             transition: 0.3s;
         }
 
+        /* Buttons */
         .btn-custom {
-            border-radius: 8px;
-            padding: 6px 12px;
-            font-size: 14px;
-            transition: 0.3s;
+            border-radius: 6px;
+            padding: 5px 10px;
+            font-size: 13px;
         }
 
         .btn-edit {
@@ -75,21 +109,21 @@
             background: #e60000;
         }
 
-        .back-btn {
-            margin-bottom: 20px;
-            display: inline-block;
-            background: #8a8d9b;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 8px;
-            text-decoration: none;
-            transition: 0.3s;
-        }
+        /* Mobile Optimization */
+        @media (max-width: 576px) {
+            h2 {
+                font-size: 20px;
+            }
 
-        .back-btn:hover {
-            background: #5a67d8;
-            transform: translateY(-2px);
-            color: #fff;
+            .back-btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .top-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
         }
     </style>
 </head>
@@ -98,38 +132,43 @@
 <div class="container">
     <div class="container-box">
 
-        <!-- Back Button -->
-        <a href="/deshboard" class="back-btn">⬅ Back to Dashboard</a>
+        <!-- Top Section -->
+        <div class="top-actions">
+            <a href="/deshboard" class="back-btn">⬅ Back to Dashboard</a>
+        </div>
 
         <h2>Doctor List</h2>
 
-        <table class="table table-bordered table-hover">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Age</th>
-                    <th>Phone</th>
-                    <th>Specialization</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
+        <!-- Responsive Table -->
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Phone</th>
+                        <th>Specialization</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
 
-            <tbody>
-                {% for d in doctor %}
-                <tr>
-                    <td>{{ d.name }}</td>
-                    <td>{{ d.age }}</td>
-                    <td>{{ d.phone }}</td>
-                    <td>{{ d.specilization }}</td>
-                    <td>
-                        <a href="/doctor/{{ d.id }}/edit/" class="btn btn-custom btn-edit">Edit</a>
-                        <a href="/doctor/{{ d.id }}/delete/" class="btn btn-custom btn-delete">Delete</a>
-                    </td>
-                </tr>
-                {% endfor %}
-            </tbody>
+                <tbody>
+                    {% for d in doctor %}
+                    <tr>
+                        <td>{{ d.name }}</td>
+                        <td>{{ d.age }}</td>
+                        <td>{{ d.phone }}</td>
+                        <td>{{ d.specilization }}</td>
+                        <td>
+                            <a href="/doctor/{{ d.id }}/edit/" class="btn btn-custom btn-edit">Edit</a>
+                            <a href="/doctor/{{ d.id }}/delete/" class="btn btn-custom btn-delete">Delete</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
 
-        </table>
+            </table>
+        </div>
 
     </div>
 </div>
