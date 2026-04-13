@@ -16,6 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path , include
+from django.views.generic import RedirectView
+from django.http import HttpResponse
+
 
 urlpatterns =[
     path('admin/', admin.site.urls),
@@ -25,4 +28,5 @@ urlpatterns =[
     path('', include('marketing.urls')),
     path('deshboard/', include('deshboard.urls')),   
     path('appointments/', include('appoinments.urls')),
+   
 ]

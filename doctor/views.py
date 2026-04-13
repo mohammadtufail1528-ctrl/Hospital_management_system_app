@@ -1,6 +1,8 @@
 from django.shortcuts import get_object_or_404, redirect, render
 from .models import Doctor 
 from django.contrib.auth.decorators import login_required
+
+
 # Create your views here.
 @login_required
 def doctor_list(request):
